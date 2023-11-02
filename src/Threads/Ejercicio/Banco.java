@@ -18,6 +18,8 @@ class Bancos{
         }
 
         System.out.println(macro.getSaldo());
+        String leo = "leo";
+        System.out.println(leo.equals("leo"));
     }
 }
 
