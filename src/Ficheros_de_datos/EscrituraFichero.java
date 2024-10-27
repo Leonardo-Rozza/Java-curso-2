@@ -12,15 +12,15 @@ public class EscrituraFichero {
 
 class Escritura{
     public void escrituraFichero(){
-        String texto = "Este texto es agregado desde la funcion booleana append!";
+        String texto = "Aprendiendo a usar streams de datos, nose para que pero bue! jaja";
         try {
-            FileWriter escribir = new FileWriter("C:\\Users\\Leo\\Desktop\\DesdeJava.txt", true);
+            FileWriter escribir = new FileWriter("/Users/leonardorozza/Desktop/streamNuevo.txt", true);
             for (int i = 0; i < texto.length(); i++){
                 escribir.write(texto.charAt(i));
             }
             escribir.close();
         } catch (IOException e){
-            e.printStackTrace();
+          System.out.println("No se pudo agregar el archivo");
         }
 
     }
