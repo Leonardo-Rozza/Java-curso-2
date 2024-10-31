@@ -1,4 +1,5 @@
 package ProgramacionGenerica;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class UsoEmpleados {
@@ -33,9 +34,9 @@ public class UsoEmpleados {
 //            System.out.println("La concha de tu madre All boys");
 //        }
                             //**********************ITERADORES********************************
-        Iterator<Empleados> iteradoEmpleados = listaEmpeados.iterator();
 
-        while (iteradoEmpleados.hasNext()) System.out.println(iteradoEmpleados.next().getDatosEmpleado());
+        Iterator <Empleados> iteratorEmpleados = listaEmpeados.iterator();
+        while (iteratorEmpleados.hasNext()) System.out.println(iteratorEmpleados.next().getDatosEmpleado());
     }
 }
 
@@ -44,7 +45,7 @@ class Empleados{
     public Empleados(String nom, double sue, int agno, int mes, int dia){
         nombre = nom;
         sueldo = sue;
-        calendario = new GregorianCalendar(agno, mes, dia);
+        calendario = new GregorianCalendar(agno, mes -1, dia);
         id = IdSiguiente;
         IdSiguiente ++;
     }
@@ -58,8 +59,11 @@ class Empleados{
     }
 
     public String getDatosEmpleado(){
-        return "El empleado " + nombre + " tiene un sueldo de " + sueldo + " y su fecha de ingreso es " + calendario;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return "El empleado " + nombre + " tiene un sueldo de " + sueldo +
+                " y su fecha de ingreso es " + sdf.format(calendario.getTime());
     }
+
 
     public static String getIdSiguiente (){
         return "El ID siguiente Empleado es " + IdSiguiente;
