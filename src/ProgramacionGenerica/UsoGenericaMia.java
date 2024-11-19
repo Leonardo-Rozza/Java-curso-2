@@ -2,21 +2,34 @@ package ProgramacionGenerica;
 
 public class UsoGenericaMia {
     public static <miMac> void main(String[] args) {
-        GenericaMia<String> genericaMia = new GenericaMia<>();
+        GenericaMia<String> miObj1 = new GenericaMia<String>();
 
-        genericaMia.setObjecto("Leonardo");
+        miObj1.setObjeto("Leonardo");
 
-        System.out.println(genericaMia.getObjecto());
+        GenericaMia<Persona> miPersona = new GenericaMia<Persona>();
 
-        GenericaMia<Imac> miMacGenericaMia = new GenericaMia<Imac>();
+        miPersona.setObjeto(new Persona("Maria"));
 
-        Imac miMac = new Imac(27, 2300);
-
-        miMacGenericaMia.setObjecto(miMac);
-
-        System.out.println(miMacGenericaMia.getObjecto());
+        System.out.println(miPersona.getObjeto().getNombre());
     }
 }
+
+class Persona {
+    private String nombre;
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+}
+
 
 
 class Imac {

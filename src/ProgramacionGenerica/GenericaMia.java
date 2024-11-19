@@ -1,16 +1,17 @@
 package ProgramacionGenerica;
 
 public class GenericaMia<T> {
-    public GenericaMia(){
-        objecto = null;
-    }
-    public void setObjecto (T nuevoValor){
-        objecto = nuevoValor;
+    public GenericaMia() {
+        objeto = null;
     }
 
-    public T getObjecto(){
-        return objecto;
+    public void setObjeto(T nuevoValor) {
+        objeto = nuevoValor;
     }
 
-    private T objecto;
+    public T getObjeto() {
+        return objeto;
+    }
+
+    private T objeto;
 }
