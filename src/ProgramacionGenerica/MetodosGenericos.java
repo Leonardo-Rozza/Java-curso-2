@@ -2,7 +2,7 @@ package ProgramacionGenerica;
 
 public class MetodosGenericos {
     public static void main(String[] args) {
-        String nombrePersonas[] = {"leo", "lucys", "mimi", "marisol","gatorade"};
+        String nombrePersonas[] = {"Leo", "Lucys", "Mimi", "Marisol","Gatorade"};
 
         System.out.println(ExaminaArrays.contarArray(nombrePersonas));
         System.out.println(ExaminaArrays.devuelveMenor(nombrePersonas));
@@ -19,7 +19,7 @@ class ExaminaArrays{
     public static <T extends Comparable> T devuelveMenor(T[] arr){
         T objetoMenor = arr[0];
         for (int i = 1; i < arr.length ; i++) {
-            if (objetoMenor.compareTo(arr[i]) < 0){
+            if (objetoMenor.compareTo(arr[i]) > 0){
                 objetoMenor = arr[i];
             }
         }
