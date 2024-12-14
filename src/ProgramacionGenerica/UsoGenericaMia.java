@@ -4,17 +4,17 @@ public class UsoGenericaMia {
     public static <miMac> void main(String[] args) {
         GenericaMia<String> genericaMia = new GenericaMia<>();
 
-        genericaMia.setObjecto("Leonardo");
+        genericaMia.setObjeto("Leonardo");
 
-        System.out.println(genericaMia.getObjecto());
+        System.out.println(genericaMia.getObjeto());
 
         GenericaMia<Imac> miMacGenericaMia = new GenericaMia<Imac>();
 
         Imac miMac = new Imac(27, 2300);
 
-        miMacGenericaMia.setObjecto(miMac);
+        miMacGenericaMia.setObjeto(miMac);
 
-        System.out.println(miMacGenericaMia.getObjecto());
+        System.out.println(miMacGenericaMia.getObjeto());
     }
 }
 
