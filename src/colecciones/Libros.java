@@ -1,5 +1,7 @@
 package colecciones;
 
+import java.util.Objects;
+
 public class Libros {
 
   private String titulo;
@@ -40,12 +42,22 @@ public class Libros {
     return "El titulo es: " + this.titulo +  "\nEl autor es: " + this.autor + "\n y su isbn es: " + this.isbn;
   }
 
-  //Sobreescribimos equals para comparar Nuestros propios OBJETOS.
-  public boolean equals(Object obj) {
-    if (obj instanceof Libros) {
-      return this.isbn == ((Libros) obj).isbn; //Devuelve true si los isbn son iguales, estamos haciendo el casting.
-    }
-    return false;
+//  //Sobreescribimos equals para comparar Nuestros propios OBJETOS.
+//  public boolean equals(Object obj) {
+//    if (obj instanceof Libros) {
+//      return this.isbn == ((Libros) obj).isbn; //Devuelve true si los isbn son iguales, estamos haciendo el casting.
+//    }
+//    return false;
+//  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(isbn);
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Libros libros)) return false;
+    return this.isbn == libros.isbn;
+  }
 }
