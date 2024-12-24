@@ -1,6 +1,7 @@
 package colecciones;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class ClientesBancarios {
@@ -21,10 +22,29 @@ public class ClientesBancarios {
     clientesDelBanco.add(cliente5);
     clientesDelBanco.add(cliente6);
 
+
+
+   //Para recorrer colecciones sigue siendo mejor el bucle for each.
+    Iterator<Cliente> it = clientesDelBanco.iterator();
+  /*  while (it.hasNext()) {
+      String nombre = it.next().getNombre();
+      System.out.println(nombre);
+    }
+   */
+
+    //Pero para la eliminacion es mejor usarlo con los iteradores.
+    while (it.hasNext()) {
+      String nombreCliente = it.next().getNombre();
+      if (nombreCliente.equals("Leonardo")) it.remove();
+    }
+
     for (Cliente clientes: clientesDelBanco){
       System.out.println("Nombre: " + clientes.getNombre() + "\nN° de cuenta: " + clientes.getnCuenta() +
-                          "\nSaldo: " +clientes.getSaldo() + "\n");
+              "\nSaldo: " +clientes.getSaldo() + "\n");
     }
+
+
+
 
   }
 }
