@@ -1,7 +1,7 @@
 package jdbc;
 
 import java.sql.*;
-
+/*
 public class ConectaGestion {
   public static void main(String[] args) {
 
@@ -30,3 +30,4 @@ public class ConectaGestion {
 
   }
 }
+*/

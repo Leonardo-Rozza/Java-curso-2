@@ -1,7 +1,7 @@
 package jdbc;
 
 import java.sql.*;
-
+/*
 public class ActualizaTabla {
     public static void main(String[] args) {
 
@@ -28,3 +28,4 @@ public class ActualizaTabla {
 
     }
 }
+*/

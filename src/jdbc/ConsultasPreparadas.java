@@ -1,7 +1,7 @@
 package jdbc;
 
 import java.sql.*;
-
+/*
 public class ConsultasPreparadas {
   public static void main(String[] args) {
     try {
@@ -33,3 +33,4 @@ public class ConsultasPreparadas {
 
   }
 }
+*/
