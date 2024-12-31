@@ -8,7 +8,7 @@ import java.awt.*;
 public class MarcoMVC extends JFrame {
 
   private JComboBox paises;
-  public JComboBox secciones;
+  private JComboBox secciones;
   private JTextArea resultados;
 
   public MarcoMVC() {
@@ -37,10 +37,36 @@ public class MarcoMVC extends JFrame {
 
     JButton consultar = new JButton("Consultar");
 
+    consultar.addActionListener(new ControladorBoton(this));
+
     add(consultar, BorderLayout.SOUTH);
 
     addWindowListener(new ControladorCargaMenus(this));
 
+  }
+
+  public JComboBox getPaises() {
+    return paises;
+  }
+
+  public void setPaises(JComboBox paises) {
+    this.paises = paises;
+  }
+
+  public JComboBox getSecciones() {
+    return secciones;
+  }
+
+  public void setSecciones(JComboBox secciones) {
+    this.secciones = secciones;
+  }
+
+  public JTextArea getResultados() {
+    return resultados;
+  }
+
+  public void setResultados(JTextArea resultados) {
+    this.resultados = resultados;
   }
 
 }
