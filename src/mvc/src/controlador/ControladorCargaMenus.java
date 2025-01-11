@@ -10,7 +10,7 @@ public class ControladorCargaMenus extends WindowAdapter {
 
   private MarcoMVC miJFrame;
   private CargaMenus miCargaMenus = new CargaMenus();
-  private ResultSet [] resultadosCombos;
+  private ResultSet resultadosCombos [];
 
   public ControladorCargaMenus(MarcoMVC miJFrame) {
     this.miJFrame = miJFrame;

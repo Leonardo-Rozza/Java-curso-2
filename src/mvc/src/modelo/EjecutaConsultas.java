@@ -7,22 +7,18 @@ import java.sql.SQLException;
 
 public class EjecutaConsultas {
 
-  private String seleccion;
   private Connection miConexion;
   private ResultSet rs;
   private PreparedStatement enviaConsulta;
   private final String CONSULTASECCION = "select NOMBREARTICULO, SECCION, PRECIO, PAISDEORIGEN from productos where SECCION = ?";
+  private final String CONSULTAPAISES = "select NOMBREARTICULO, SECCION, PRECIO, PAISDEORIGEN from productos where paisdeorigen = ?";
+  private final String CONSULTAPAISESYSECCIONES = "select NOMBREARTICULO, SECCION, PRECIO, PAISDEORIGEN from productos where paisdeorigen = ? AND SECCION = ?";
 
   public EjecutaConsultas() {
     miConexion = new Conexion().getConnection();
   }
 
-
-
-
   public ResultSet consultaBBDD(String seccion, String pais ) {
-    seleccion = "";
-
     try {
     if (!seccion.equals("Todas") && pais.equals("Todos")) {
 
@@ -33,9 +29,19 @@ public class EjecutaConsultas {
 
 
     } else if (seccion.equals("Todas") && !pais.equals("Todos")) {
-      seleccion = "Has escogido un pais";
+
+      enviaConsulta = miConexion.prepareStatement(CONSULTAPAISES);
+      enviaConsulta.setString(1, pais);
+
+      rs = enviaConsulta.executeQuery();
+
     } else {
-      seleccion = "Has escogido una seccion y un pais";
+
+      enviaConsulta = miConexion.prepareStatement(CONSULTAPAISESYSECCIONES);
+      enviaConsulta.setString(1, pais);
+      enviaConsulta.setString(2, seccion);
+
+      rs = enviaConsulta.executeQuery();
     }} catch (SQLException e) {
       throw new RuntimeException(e);
     }
